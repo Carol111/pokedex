@@ -1,5 +1,5 @@
 import React from 'react';
-import {StatusBar, Text} from 'react-native';
+import {StatusBar} from 'react-native';
 
 import {HomeProps} from 'src/routes';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -12,7 +12,7 @@ const Home = ({navigation}: HomeProps) => {
     <SafeAreaView>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <S.Container>
-        <Text>Home</Text>
+        <S.Title>Home</S.Title>
         <Button
           title={'Detalhes'}
           onPress={() => {
