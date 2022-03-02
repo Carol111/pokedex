@@ -1,15 +1,22 @@
-//import liraries
 import React from 'react';
 import {Text} from 'react-native';
 
-import Button from 'src/components/Button';
+import {HomeProps} from 'src/routes';
+
+import {Button} from 'src/components';
 import * as S from './styles';
 
-const Home = () => {
+const Home = ({navigation}: HomeProps) => {
   return (
     <S.Container>
       <Text>Home</Text>
-      <Button />
+      <Button
+        title={'Detalhes'}
+        onPress={() => {
+          console.log('Detalhes');
+          navigation.navigate('Details', {pokemonId: '123'});
+        }}
+      />
     </S.Container>
   );
 };
