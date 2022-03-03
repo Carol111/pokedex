@@ -46,6 +46,7 @@ const theme: DefaultTheme = {
       white: '#FFFFFF',
       defaultInput: '#F2F2F2',
       pressedInput: '#E2E2E2',
+      highlight: '#EA5D60',
       modal: {
         color: '#000000',
         opacity: '0.25',
