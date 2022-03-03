@@ -9,6 +9,36 @@ const theme: DefaultTheme = {
     },
     primary: 'red',
   },
+  typography: {
+    title: {
+      size: '100px',
+      family: 'Roboto-Bold',
+    },
+    applicationTitle: {
+      size: '32px',
+      family: 'Roboto-Bold',
+    },
+    pokemonName: {
+      size: '26px',
+      family: 'Roboto-Bold',
+    },
+    filterTitle: {
+      size: '16px',
+      family: 'Roboto-Bold',
+    },
+    description: {
+      size: '16px',
+      family: 'Roboto-Regular',
+    },
+    pokemonNumber: {
+      size: '12px',
+      family: 'Roboto-Bold',
+    },
+    pokemonType: {
+      size: '12px',
+      family: 'Roboto-Medium',
+    },
+  },
 };
 
 export default theme;
