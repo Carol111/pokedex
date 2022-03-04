@@ -5,7 +5,7 @@ import {HomeProps} from 'src/routes';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {Button} from 'src/components';
-import {getPokemon} from 'src/services/pokemons';
+import {getPokemonList} from 'src/services/pokemons';
 import * as S from './styles';
 
 const Home = ({navigation}: HomeProps) => {
@@ -16,9 +16,12 @@ const Home = ({navigation}: HomeProps) => {
         <S.Title>Home</S.Title>
         <Button
           title={'Detalhes'}
-          onPress={() => {
+          onPress={async () => {
             console.log('Detalhes');
-            getPokemon();
+
+            const response = await getPokemonList();
+            console.log('response', response);
+
             navigation.navigate('Details', {pokemonId: '123'});
           }}
         />
