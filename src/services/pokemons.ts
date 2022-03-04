@@ -25,7 +25,7 @@ export async function getPokemonList() {
   if (!baseList.ok) {
     return {
       ok: false,
-      message: 'There was an error loading the pokemon list',
+      message: 'A wild error appeared while loading the pokemon list',
       data: {} as T.PokemonList,
     };
   }
@@ -35,7 +35,7 @@ export async function getPokemonList() {
   if (!detailedList.ok) {
     return {
       ok: false,
-      message: 'There was an error loading pokemon data',
+      message: 'A wild error appeared while loading pokemon data',
       data: {} as T.PokemonList,
     };
   }
