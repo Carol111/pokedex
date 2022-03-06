@@ -4,7 +4,7 @@ import {StatusBar} from 'react-native';
 import {HomeProps} from 'src/routes';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-import {Button} from 'src/components';
+import {Button, Badge} from 'src/components';
 import {getPokemonList} from 'src/services/pokemons';
 import * as S from './styles';
 
@@ -14,6 +14,7 @@ const Home = ({navigation}: HomeProps) => {
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <S.Container>
         <S.Title>Home</S.Title>
+        <Badge type={'bug'} />
         <Button
           title={'Detalhes'}
           onPress={async () => {

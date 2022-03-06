@@ -4,6 +4,7 @@ declare module 'styled-components/native' {
   export interface DefaultTheme {
     colors: {
       type: {
+        [index: string]: string;
         bug: string;
         dark: string;
         dragon: string;
@@ -24,6 +25,7 @@ declare module 'styled-components/native' {
         water: string;
       };
       backgroundType: {
+        [index: string]: string;
         bug: string;
         dark: string;
         dragon: string;
