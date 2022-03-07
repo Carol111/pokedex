@@ -1,19 +1,24 @@
-import React from 'react';
-import {Text} from 'react-native';
+import React, {useContext} from 'react';
+import {ThemeContext} from 'styled-components';
 
-import Bug from 'src/assets/svg/vectors/types/bug.svg';
+import useTypeIcons from 'src/hooks/useTypeIcons';
 
 import * as S from './styles';
+import {DefaultTheme} from 'styled-components/native';
 
 type Props = {
   type: string;
+  size: number;
 };
 
-const Badge = ({type}: Props) => {
+const Badge = ({type, size}: Props) => {
+  const theme: DefaultTheme = useContext(ThemeContext);
+  const icon = useTypeIcons(type, size, theme.colors.text.white);
+
   return (
     <S.Container type={type}>
-      <Bug width={40} height={40} />
-      <Text>{type}</Text>
+      {icon}
+      <S.Title>{type}</S.Title>
     </S.Container>
   );
 };
