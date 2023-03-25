@@ -20,6 +20,7 @@ api.interceptors.response.use(
     return Promise.reject({
       ok: false,
       status: error.status,
+      data: error.data || {},
     });
   },
 );

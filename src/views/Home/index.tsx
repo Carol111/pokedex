@@ -1,5 +1,5 @@
-import React, {useContext} from 'react';
-import {StatusBar} from 'react-native';
+import React, {useContext, useEffect, useCallback} from 'react';
+import {StatusBar, LogBox} from 'react-native';
 import {ThemeContext} from 'styled-components';
 import {DefaultTheme} from 'styled-components/native';
 
@@ -10,10 +10,21 @@ import {Button, Badge} from 'src/components';
 import {getPokemonList} from 'src/services/pokemons';
 import * as S from './styles';
 
-const Home = ({navigation}: HomeProps) => {
-  console.disableYellowBox = true;
+LogBox.ignoreAllLogs();
 
+const Home = ({navigation}: HomeProps) => {
   const theme: DefaultTheme = useContext(ThemeContext);
+
+  const loadPokemons = useCallback(async () => {
+    console.log('Detalhes');
+
+    const response = await getPokemonList();
+    console.log('response', response);
+  }, []);
+
+  useEffect(() => {
+    loadPokemons();
+  }, [loadPokemons]);
 
   return (
     <SafeAreaView>
@@ -23,21 +34,20 @@ const Home = ({navigation}: HomeProps) => {
       />
 
       <S.Container>
-        <S.Title>Pokedex</S.Title>
+        <S.Header>
+          <S.Title>Pokedex</S.Title>
+        </S.Header>
 
-        <Badge type={'water'} size={15} />
+        <S.Content>
+          <Badge type={'water'} size={15} />
 
-        <Button
-          title={'Detalhes'}
-          onPress={async () => {
-            console.log('Detalhes');
-
-            const response = await getPokemonList();
-            console.log('response', response);
-
-            navigation.navigate('Details', {pokemonId: '123'});
-          }}
-        />
+          <Button
+            title={'Detalhes'}
+            onPress={async () => {
+              navigation.navigate('Details', {pokemonId: '123'});
+            }}
+          />
+        </S.Content>
       </S.Container>
     </SafeAreaView>
   );

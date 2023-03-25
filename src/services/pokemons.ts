@@ -22,6 +22,7 @@ type DetailedListResponse = {
 
 export async function getPokemonList() {
   const baseList = await getPokemon();
+
   if (!baseList.ok) {
     return {
       ok: false,
