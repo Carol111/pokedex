@@ -6,7 +6,7 @@ import {DefaultTheme} from 'styled-components/native';
 import {HomeProps} from 'src/routes';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-import {Button, Badge} from 'src/components';
+import {Button, Badge, ShimmerCard} from 'src/components';
 import {getPokemonList} from 'src/services/pokemons';
 import * as S from './styles';
 
@@ -15,16 +15,14 @@ LogBox.ignoreAllLogs();
 const Home = ({navigation}: HomeProps) => {
   const theme: DefaultTheme = useContext(ThemeContext);
 
-  const loadPokemons = useCallback(async () => {
-    console.log('Detalhes');
+  // const loadPokemons = useCallback(async () => {
+  //   const response = await getPokemonList();
+  //   console.log('response', response);
+  // }, []);
 
-    const response = await getPokemonList();
-    console.log('response', response);
-  }, []);
-
-  useEffect(() => {
-    loadPokemons();
-  }, [loadPokemons]);
+  // useEffect(() => {
+  //   loadPokemons();
+  // }, [loadPokemons]);
 
   return (
     <SafeAreaView>
@@ -39,6 +37,11 @@ const Home = ({navigation}: HomeProps) => {
         </S.Header>
 
         <S.Content>
+          <ShimmerCard />
+          <ShimmerCard />
+          <ShimmerCard />
+          <ShimmerCard />
+
           <Badge type={'water'} size={15} />
 
           <Button

@@ -45,6 +45,7 @@ const theme: DefaultTheme = {
     background: {
       white: '#FFFFFF',
       black: '#000000',
+      gray: '#E2E2E2',
       defaultInput: '#F2F2F2',
       pressedInput: '#E2E2E2',
       highlight: '#EA5D60',
