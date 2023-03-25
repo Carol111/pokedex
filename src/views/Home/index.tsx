@@ -11,16 +11,19 @@ import {getPokemonList} from 'src/services/pokemons';
 import * as S from './styles';
 
 const Home = ({navigation}: HomeProps) => {
+  console.disableYellowBox = true;
+
   const theme: DefaultTheme = useContext(ThemeContext);
 
   return (
     <SafeAreaView>
       <StatusBar
-        barStyle="dark-content"
-        backgroundColor={theme.colors.background.white}
+        barStyle="light-content"
+        backgroundColor={theme.colors.background.black}
       />
+
       <S.Container>
-        <S.Title>Home</S.Title>
+        <S.Title>Pokedex</S.Title>
 
         <Badge type={'water'} size={15} />
 

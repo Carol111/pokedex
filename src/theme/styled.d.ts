@@ -47,6 +47,7 @@ declare module 'styled-components/native' {
       };
       background: {
         white: string;
+        black: string;
         defaultInput: string;
         pressedInput: string;
         highlight: string;
