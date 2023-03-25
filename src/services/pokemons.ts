@@ -27,7 +27,7 @@ export async function getPokemonList() {
     return {
       ok: false,
       message: 'A wild error appeared while loading the pokemon list',
-      data: {} as T.PokemonList,
+      data: {} as DetailedListResponse,
     };
   }
 
@@ -37,7 +37,7 @@ export async function getPokemonList() {
     return {
       ok: false,
       message: 'A wild error appeared while loading pokemon data',
-      data: {} as T.PokemonList,
+      data: {} as DetailedListResponse,
     };
   }
 
