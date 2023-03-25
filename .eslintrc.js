@@ -15,6 +15,7 @@ module.exports = {
   ],
   rules: {
     'no-extra-boolean-cast': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
   },
