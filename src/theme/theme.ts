@@ -96,7 +96,7 @@ const theme: DefaultTheme = {
       family: 'Roboto-Regular',
     },
     pokemonNumber: {
-      size: '12px',
+      size: '14px',
       family: 'Roboto-Bold',
     },
     pokemonType: {

@@ -9,6 +9,7 @@ export const Container = styled.View<ContainterProps>`
   flex-direction: row;
   padding: 5px 5px;
   border-radius: 3px;
+  margin-right: 5px;
 `;
 
 export const Title = styled.Text`
